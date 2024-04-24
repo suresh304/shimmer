@@ -1,24 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import MemeCard from './component/MemeCard';
+import { Shimmer } from './component/Shimmer';
 
 function App() {
+  const [memes, setMemes] = useState([])
+  const [loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  const fetchData = async () => {
+
+    try {
+      const data = await fetch("https://meme-api.com/gimme/20")
+      const json = await data.json()
+      setMemes(json.memes)
+      setLoading(false)
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <center>
+      <h1>Hello shimmer</h1>
+      <div className="App">
+        {loading ? <Shimmer /> : memes.map((meme,i) => <MemeCard meme={meme} key={i}/>)}
+      </div>
+    </center>
   );
 }
 
