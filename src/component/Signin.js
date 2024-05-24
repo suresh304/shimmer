@@ -1,16 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import GoogleButton from 'react-google-button'
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { auth } from '../firebase';
 import { AuthContext } from '../context/AuthProvider';
+import { json } from 'react-router-dom';
 
 
 function SignIn() {
 const {user,setUser} = useContext(AuthContext)
 
+useEffect(()=>{
+  const cacheUser = localStorage.getItem("user")
+
+if(cacheUser){
+  setUser(JSON.parse(cacheUser));
+  return;
+}
+},[])
+
     const login=()=>{
-
-
 const provider= new GoogleAuthProvider()
 signInWithPopup(auth, provider)
   .then((result) => {
@@ -21,6 +29,7 @@ console.log(credential,"+++++++")
     // The signed-in user info.
     const user = result.user;
     setUser(user)
+    localStorage.setItem("user",JSON.stringify(user))
     console.log(user)
     // IdP data available using getAdditionalUserInfo(result)
     // ...
@@ -37,11 +46,14 @@ console.log(credential,"+++++++")
 
     }
     const signout=()=>{
-    
+    console.log("going to signout")
         signOut(auth).then(() => {
+          setUser(null)
+localStorage.setItem("user","")
           console.log("hello user sign out")
         }).catch((error) => {
           // An error happened.
+          console.log(error,">>>>>>>>>>>>>>")
         });
                 
         }
@@ -50,8 +62,7 @@ console.log(credential,"+++++++")
 
   return (
     <div>
-        {/* {!user?<button onClick={login}/>:<GoogleButton label='Logout' onClick={signout}/>} */}
-        {!user?<button onClick={login}>Login</button>:<button onClick={signout}>Logout</button>}
+        {!user?<button onClick={login} className='bg-green-500 text-white'>Login</button>:<button onClick={signout} className='bg-red-600 text-white'>Logout</button>}
     </div>
   )
 }

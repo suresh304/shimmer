@@ -23,10 +23,8 @@ import Coding from './component/courses/Coding';
 import Fetch_API_Data from './component/React/Fetch_API_Data';
 import State_management from './component/React/State_management';
 import { lazy } from 'react';
-for (let index = 0; index < 5; index++) {
-  console.log("MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM")
-  
-}
+import Comment from './component/Comment';
+
 
 const updatedREACT_CONCEPTS = REACT_CONCEPTS.map((ele) => ({
   ...ele,
@@ -51,7 +49,9 @@ function App() {
           <Route element={<Profile />} path='profile' />
           <Route element={<Home />} path='/' />
           <Route element={<Home />} path='/Home' />
-          <Route element={<Courses/>} exact path='courses'>
+          <Route element={<Comment/>} path='/Comment' />
+          
+          <Route element={<PrivateRoute><Courses/></PrivateRoute>} exact path='courses'>
             <Route element = {<ReactJs/>} path='ReactJs'>
             </Route>
             <Route element = {<Angular/>} path='Angular'/>

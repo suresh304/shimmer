@@ -8,16 +8,20 @@
 }     
 .header a{
     text-decoration: none;
-    background-color: rgb(230, 221, 221);
+    /* background-color: rgb(230, 221, 221); */
     padding: 10px;
     border-radius: 10px;
     color: rgb(7, 12, 17);
-}   
+}  
+.header div{
+    text-decoration: none;
+    background-color: rgb(230, 221, 221);
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(7, 12, 17); 
+} 
 
-.active{
-    background-color: blue;
-    color: white;
-}
+
 .header div{
     margin-right: 10px;
 }   

@@ -21,7 +21,6 @@ useEffect(() => {
 
 
 const next = ()=>{
-    console.log("hello")
     setActive(pre=>(pre+1)%images.length)
 }
 const prev = ()=>{
