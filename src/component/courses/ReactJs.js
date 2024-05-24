@@ -1,9 +1,7 @@
 import React from 'react'
-import Accordian from '../Accordian'
-import { Box, Divider } from '@mui/material'
+import {  Divider } from '@mui/material'
 import Topic from '../Topic'
 import { REACT_CONCEPTS } from '../../constants/constants'
-import { Outlet } from 'react-router-dom'
 
 const ReactJs = () => {
   console.log(REACT_CONCEPTS.length)

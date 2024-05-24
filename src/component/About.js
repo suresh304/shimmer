@@ -7,9 +7,9 @@ import StarRaing from './starRaing/StarRaing'
 export const About = () => {
   return (
     <div className='flex flex-col p-10 justify-around'>
-    {/* <Slider/>
+    <Slider/>
     <Searchbar/>
-    <Accordian/> */}
+    <Accordian/>
     <StarRaing
     size={10}
     onChange={()=>{}}

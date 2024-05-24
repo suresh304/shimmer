@@ -20,7 +20,7 @@ const StarRaing = ({ size = 5, rate=1 }) => {
   return (
     <div className='flex flex-col items-center'>
       <div>
-      {Array(size).fill("").map((_, i) => <span>
+      {Array(size).fill("").map((_, i) => <span key={i}>
          <i className={`fa fa-star text-4xl p-1 ${(i+1>hoverRating) ? 'text-slate-300' : 'text-yellow-300'}`} onMouseEnter={(e) => handleMouseEnter(e, i)} onMouseLeave={handleMouseLeave} onClick={()=>selectRating(i)}/>
          </span>)}
          </div>

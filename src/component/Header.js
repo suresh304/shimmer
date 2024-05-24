@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 import SignIn from "./Signin";
 
 import "../styles/Header.css";
@@ -9,8 +9,9 @@ const Header = () => {
   return (
     <div className="header z-auto">
       {navbarOptions.map((opt, i) => (
-        <div className="">
+        <div key={opt}>
           <NavLink
+          key={opt}
             to={opt}
             className={({ isActive }) => (isActive ? "bg-green-600" : "inactive")}
           >

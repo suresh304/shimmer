@@ -3,56 +3,9 @@ import comments from '../MockData/comments.json'
 
 const Comment = () => {
   
-  const [commentsData,setCommentsData] = useState(comments)
+  const [commentsData] = useState(comments)
 
-  // const comments = [
-  //   {
-  //   author: "suresh",
-  //   content: "he is a good guy",
-  //   replies: [
-  //     {
-  //       author: "ramesh",
-  //       content: "i dont know",
-  //       replies: []
-  //     },
-  //     {
-  //       author: "naresh",
-  //       content: "i dont know",
-  //       replies: [
-  //         {
-  //           author:"madan",
-  //           content:"hey,naresh",
-  //           replies:[]
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       author: "yashwanth",
-  //       content: "keep it up",
-  //       replies: []
-  //     },
-  //   ]
-  // },
-  // {
-  //   author: "amrutha",
-  //   content: "i really appreciate his work",
-  //   replies: [
-  //     {
-  //       author: "ajith",
-  //       content: "you shut up!!!",
-  //       replies: []
-  //     },
-  //     {
-  //       author: "ramesh",
-  //       content: "i dont know",
-  //       replies: []
-  //     }
-  //   ]
-  // },
-
-
-
-  // ]
+  
 
 
   return (
@@ -72,7 +25,7 @@ const SingleComment = ({comment} ) => {
 
   console.log(comment)
   const replyHandler = (e) =>{
-    if(e.code == "Enter"){
+    if(e.code === "Enter"){
       setSingleCommentData({...singleCommentData,replies:[...singleCommentData.replies,{author:"coder",content:e.target.value,replies:[]}]})
 e.target.value = ""
 setReply(r=>!r)

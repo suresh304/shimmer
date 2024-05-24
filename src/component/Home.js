@@ -7,19 +7,19 @@ const Home = () => {
     const [memes, setMemes] = useState([])
     const [loading, setLoading] = useState(true)
 
-
-    useEffect(() => {
-        fetchData()
-        window.addEventListener("scroll", scrollHandler)
-        return () => document.removeEventListener("scroll", scrollHandler)
-    }, [])
-
     const scrollHandler = () => {
         //when we reached the bottom of the page we are fetcing the data again
         if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
             fetchData()
         }
     }
+    useEffect(() => {
+        fetchData()
+        window.addEventListener("scroll", scrollHandler)
+        return () => document.removeEventListener("scroll", scrollHandler)
+    }, [])
+
+    
 
 
 

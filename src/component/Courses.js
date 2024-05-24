@@ -1,8 +1,6 @@
 import React from 'react'
 import '../styles/course.css'
-import { BrowserRouter, Link, Outlet, Route, Routes } from 'react-router-dom'
-import Angular from './courses/Angular'
-import ReactJs from './courses/ReactJs'
+import {  Outlet } from 'react-router-dom'
 import SidebarCourses from './SidebarCourses'
 
 const Courses = () => {

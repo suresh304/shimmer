@@ -1,30 +1,25 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { COURSE_ROUTES } from '../constants/constants';
 import JavascriptIcon from '@mui/icons-material/Javascript';
+import { Box } from '@mui/material';
 
 const drawerWidth = 240;
 
 function SidebarCourses(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
+  console.log(isClosing)
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -35,11 +30,7 @@ function SidebarCourses(props) {
     setIsClosing(false);
   };
 
-  const handleDrawerToggle = () => {
-    if (!isClosing) {
-      setMobileOpen(!mobileOpen);
-    }
-  };
+  
 
   const drawer = (
     <div>
@@ -65,9 +56,6 @@ function SidebarCourses(props) {
       </List>
     </div>
   );
-
-  // Remove this const when copying and pasting into your project.
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>

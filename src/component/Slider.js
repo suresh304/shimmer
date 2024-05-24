@@ -9,6 +9,16 @@ const Slider = () => {
         "https://images.unsplash.com/photo-1587691592099-24045742c181?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
+
+
+
+const next = ()=>{
+    setActive(pre=>(pre+1)%images.length)
+}
+const prev = ()=>{
+    setActive(active-1<0?images.length-1:active-1)
+}
+
 useEffect(() => {
   let x =setInterval(()=>{
     next()
@@ -19,14 +29,6 @@ useEffect(() => {
   }
 }, [])
 
-
-const next = ()=>{
-    setActive(pre=>(pre+1)%images.length)
-}
-const prev = ()=>{
-    setActive(active-1<0?images.length-1:active-1)
-}
-
   return (
     <div>
         <center className='flex justify-center items-center my-5'>
@@ -34,12 +36,10 @@ const prev = ()=>{
         {
 
             images.map((ele,ind)=>{
-             return      <img className ={`w-[600px] h-[350px] ${active==ind?"":"hidden"}`} src={images[ind]} />
+             return      <img key={ele} className ={`w-[600px] h-[350px] ${active===ind?"":"hidden"}`} alt="img" src={images[ind]} />
 
             })
         }
-
-     {/* <img className ="w-[600px] h-[350px]" src={images[active]}/> */}
      <button className='bg-black rounded-lg text-white' onClick = {next}>next</button>
         </center>
 
