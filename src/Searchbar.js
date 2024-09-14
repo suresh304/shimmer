@@ -5,7 +5,7 @@ const Searchbar = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [searchText, setSearchText] = useState();
   const [showSuggestion, setShowSuggestion] = useState(false);
-  const [cache, setCache] = useState({});
+  const [cache] = useState({});
   useEffect(() => {
     const x = setTimeout(() => {
       fetchData();

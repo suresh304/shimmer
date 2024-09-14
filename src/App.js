@@ -9,18 +9,12 @@ import { Profile } from './component/Profile';
 import PrivateRoute from './component/PrivateRoute';
 import {AuthProvider} from './context/AuthProvider';
 import ReactJs from './component/courses/ReactJs';
-import Angular from './component/courses/Angular';
-import Nodejs from './component/courses/Nodejs';
-import Golang from './component/courses/Golang';
-import Javascript from './component/courses/Javascript';
 import './index.css'
-import Coding from './component/courses/Coding';
 import Comment from './component/Comment';
 import { useEffect } from 'react';
 import Livechat from './component/Livestream/Livechat';
 import Barchart from './component/Barchart/Barchart';
 import Game from './component/country-capital/Game';
-import GridSelect from './component/Gridselect/GridSelect';
 import SelectableGrid from './component/gridselection/SelectableGrid';
 import Loader from './component/Loaderr/Loader';
 import StarRaing from './component/starRaing/StarRaing';

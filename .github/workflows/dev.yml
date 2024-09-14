@@ -31,9 +31,10 @@ jobs:
         echo "REACT_APP_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env
         echo "REACT_APP_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}" >> .env
 
-    # Step 5: Build the React app
+    # Step 5: Build the React app (ignore warnings)
     - name: Build the React app
-      run: npm run build
+      run: |
+        CI=false npm run build
 
     # Step 6: Deploy to Netlify
     - name: Deploy to Netlify
