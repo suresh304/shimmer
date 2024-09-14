@@ -1,0 +1,24 @@
+/* .grid-container {
+    align-items: center;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: fit-content;
+    gap: 20px;
+    border: blueviolet;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    border-radius: 20%;
+}
+
+.box.active {
+    background-color: greenyellow;
+}
+
+.box.hide {
+    visibility: hidden;
+} */

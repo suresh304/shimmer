@@ -9,11 +9,6 @@
   }
 }
 
-
-
-
-
-
 .meme_card , .shimmer{
   width: 350px;
   height: 460px;
@@ -42,4 +37,19 @@
   background-color: rgba(170, 168, 168, 0.205);
   animation: shimmer 2s infinite;
 
+}
+.cgrid{
+  display: grid;
+  grid-template-columns: repeat(var(--cols),55px);
+  grid-template-rows: repeat(var(--rows),55px);
+  gap: 3px;
+  user-select: none;
+}
+.box{
+  background-color: rgb(235, 230, 225);
+  border: 1px solid red;
+}
+.selected{
+  background-color: black;
+  color: white;
 }

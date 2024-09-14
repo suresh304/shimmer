@@ -3,8 +3,9 @@ import {  NavLink } from "react-router-dom";
 import SignIn from "./Signin";
 
 import "../styles/Header.css";
+import SupaSignIn from "../supabaseAuth/SupaSignIn";
 const Header = () => {
-  const navbarOptions = ["Home", "About", "Courses", "Profile", "Comment"];
+  const navbarOptions = ["Home", "About", "Courses", "Profile", "Comment","Live"];
 
   return (
     <div className="header z-auto">
@@ -20,7 +21,8 @@ const Header = () => {
         </div>
       ))}
 
-      <SignIn />
+      {/* <SignIn /> */}
+      <SupaSignIn/>
     </div>
   );
 };

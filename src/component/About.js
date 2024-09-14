@@ -3,6 +3,7 @@ import Slider from './Slider'
 import Searchbar from '../Searchbar'
 import Accordian from './Accordian'
 import StarRaing from './starRaing/StarRaing'
+import Barchart from './Barchart/Barchart'
 
 export const About = () => {
   return (
@@ -16,6 +17,8 @@ export const About = () => {
     onClick={()=>{}}
     onHover = {()=>{}}
     />
+      <Barchart/>
+
     </div>
   )
 }

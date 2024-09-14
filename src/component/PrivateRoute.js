@@ -6,10 +6,9 @@ import { AuthContext } from '../context/AuthProvider'
 const PrivateRoute = ({ children }) => {
 const {user} = useContext(AuthContext)
 console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",user)
-    // const [isAuth, setIsAuth] = useState(true)
-    return user ? (
+    return user?.user ? (
         <div>{children}</div>
-    ) : <Navigate to="/about" />
+    ) : <Navigate to="/home" />
 }
 
 export default PrivateRoute

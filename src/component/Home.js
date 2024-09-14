@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Shimmer } from './Shimmer'
 import MemeCard from './MemeCard'
+import reverseString  from 'npmsur'
 
 const Home = () => {
 
     const [memes, setMemes] = useState([])
     const [loading, setLoading] = useState(true)
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>",reverseString("good morning"))
 
     const scrollHandler = () => {
         //when we reached the bottom of the page we are fetcing the data again

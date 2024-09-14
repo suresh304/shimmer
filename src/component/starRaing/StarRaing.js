@@ -26,6 +26,7 @@ const StarRaing = ({ size = 5, rate=1 }) => {
          </div>
          <div>Rating_{rating}/{size}</div>
     </div>
+    
   )
 }
 

@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"suresh",
+        "percentage":45
+    },
+    {
+        "id":2,
+        "name":"Ramesh",
+        "percentage":75
+    },
+    {
+        "id":3,
+        "name":"Naresh",
+        "percentage":95
+    },
+    {
+        "id":4,
+        "name":"Yash",
+        "percentage":92
+    },
+    {
+        "id":5,
+        "name":"amrutha",
+        "percentage":99
+    },
+    {
+        "id":6,
+        "name":"ajith",
+        "percentage":69
+    },
+    {
+        "id":7,
+        "name":"subitha",
+        "percentage":59
+    }
+    
+]
