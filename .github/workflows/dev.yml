@@ -11,41 +11,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the code from the repository
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Step 1: Check out the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'  # Set your Node.js version here
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Set your Node.js version here
 
-    # Step 3: Install dependencies
-    - name: Install dependencies
-      run: npm install
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-    # Step 4: Inject Supabase environment variables
-    - name: Inject Supabase environment variables
-      run: |
-        echo "REACT_APP_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env
-        echo "REACT_APP_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}" >> .env
+      # Step 4: Inject Supabase environment variables
+      - name: Inject Supabase environment variables
+        run: |
+          echo "REACT_APP_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" >> .env
+          echo "REACT_APP_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}" >> .env
 
-    # Step 5: Build the React app (ignore warnings)
-    - name: Build the React app
-      run: |
-        EXTEND_ESLINT=true CI=false npm run build
+      # Step 5: Build the React app (ignore warnings)
+      - name: Build the React app
+        run: |
+          EXTEND_ESLINT=true CI=false npm run build
 
-    # Step 6: Deploy to Netlify
-    - name: Deploy to Netlify
-      uses: nwtgck/actions-netlify@v1.2.3
-      with:
-        publish-dir: ./build  # The directory where React outputs the build
-        production-deploy: true
-      env:
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-    - name: Post to a Slack channel
+      # Step 6: Deploy to Netlify
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2.3
+        with:
+          publish-dir: ./build  # The directory where React outputs the build
+          production-deploy: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # Step 7: Post to a Slack channel
+      - name: Post to a Slack channel
         id: slack
         uses: slackapi/slack-github-action@v1.27.0
         with:
