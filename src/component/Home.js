@@ -42,7 +42,11 @@ const Home = () => {
 
     return (
         <div className="App">
+{/*         
             {loading ? <Shimmer /> : memes.map((meme, i) => <MemeCard meme={meme} key={i} />)}
+        */}
+
+        <h1> welcome to the cicd pipelines</h1>
         </div>
     )
 }
