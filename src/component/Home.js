@@ -46,7 +46,7 @@ const Home = () => {
             {loading ? <Shimmer /> : memes.map((meme, i) => <MemeCard meme={meme} key={i} />)}
         */}
 
-        <h1> HELLO WORLD..</h1>
+        <h1> HELLO WORLD..welcome</h1>
         </div>
     )
 }
