@@ -42,11 +42,12 @@ const Home = () => {
 
     return (
         <div className="App">
-{/*         
+         {/*         
             {loading ? <Shimmer /> : memes.map((meme, i) => <MemeCard meme={meme} key={i} />)}
         */}
 
         <h1> HELLO WORLD..welcome</h1>
+        <h2>Jump first,then think as much as you want</h2>
         </div>
     )
 }
